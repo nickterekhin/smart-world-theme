@@ -1,0 +1,37 @@
+.td-call-center-container {
+  color: #fff; }
+  .td-call-center-container .td-working-hours {
+    list-style: none; }
+    .td-call-center-container .td-working-hours li {
+      color: #fff;
+      margin-bottom: 10px; }
+      .td-call-center-container .td-working-hours li label {
+        margin-right: 10px;
+        font-weight: 600; }
+      .td-call-center-container .td-working-hours li span {
+        background: #27b10b;
+        color: #fff;
+        padding: 3px 5px; }
+  .td-call-center-container .td-contact-info li {
+    color: #fff; }
+    .td-call-center-container .td-contact-info li i {
+      margin-right: 5px;
+      color: #999; }
+    .td-call-center-container .td-contact-info li a {
+      color: #fff; }
+
+.image.wp-image-15100 {
+  width: 50%; }
+
+.td-free-call-line {
+  margin-top: 30px; }
+  .td-free-call-line .td-free-call-header {
+    display: block;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600; }
+  .td-free-call-line .td-free-call-descr {
+    font-size: 11px;
+    background: #999;
+    color: #313131;
+    padding: 3px 5px; }

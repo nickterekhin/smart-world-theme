@@ -1,0 +1,53 @@
+@import "../vars/_footer_vars";
+
+.td-call-center-container{
+  color:#fff;
+  .td-working-hours{
+    list-style: none;
+    li{
+      color:#fff;
+      margin-bottom:10px;
+      label{
+        margin-right:10px;
+        font-weight: 600;
+      }
+      span{
+        background: #27b10b;
+        color:#fff;
+        padding:3px 5px;
+      }
+    }
+  }
+  .td-contact-info{
+    li{
+      color:#fff;
+      i{
+        margin-right:5px;
+        color:#999;
+      }
+      a{
+        color:#fff;
+      }
+    }
+  }
+}
+.image {
+  &.wp-image-15100{
+    width:50%;
+  }
+}
+.td-free-call-line{
+  margin-top:30px;
+  .td-free-call-header{
+    display: block;
+    color:#fff;
+    font-size: 30px;
+    font-weight: 600;
+  }
+  .td-free-call-descr{
+    font-size: 11px;
+    background: #999;
+    color: #313131;
+    padding: 3px 5px;
+  }
+}
