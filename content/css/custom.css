@@ -12,13 +12,15 @@
         background: #27b10b;
         color: #fff;
         padding: 3px 5px; }
-  .td-call-center-container .td-contact-info li {
-    color: #fff; }
-    .td-call-center-container .td-contact-info li i {
-      margin-right: 5px;
-      color: #999; }
-    .td-call-center-container .td-contact-info li a {
+  .td-call-center-container .td-contact-info {
+    list-style: none; }
+    .td-call-center-container .td-contact-info li {
       color: #fff; }
+      .td-call-center-container .td-contact-info li i {
+        margin-right: 5px;
+        color: #999; }
+      .td-call-center-container .td-contact-info li a {
+        color: #fff; }
 
 .image.wp-image-15100 {
   width: 50%; }
