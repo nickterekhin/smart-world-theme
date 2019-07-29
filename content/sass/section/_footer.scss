@@ -31,6 +31,37 @@
       }
     }
   }
+  &.td-maintenance{
+    .td-working-hours{
+      list-style: none;
+      li{
+        color:#313131;
+        margin-bottom:10px;
+        label{
+          margin-right:10px;
+          font-weight: 600;
+        }
+        span{
+          background: #313131;
+          color:#fff;
+          padding:3px 5px;
+        }
+      }
+    }
+    .td-contact-info {
+      list-style: none;
+      li {
+        color: #313131;
+        i{
+          margin-right:5px;
+          color:#666;
+        }
+        a{
+          color:#313131;
+        }
+      }
+    }
+  }
 }
 .image {
   &.wp-image-15100{
