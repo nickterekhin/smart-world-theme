@@ -5,6 +5,9 @@ define("CHILD_THEME_PATH",get_stylesheet_directory());
 define("CHILD_THEME_MAIN_STYLE",get_stylesheet_uri());
 define("CHILD_THEME_UPLOAD_URI",wp_upload_dir()['baseurl']);
 
+include('inc/woocommerce-config.php');
+
+
 add_action('wp_enqueue_scripts', 'main_style_setup',20);
 function main_style_setup()
 {

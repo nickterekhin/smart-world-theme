@@ -1,3 +1,44 @@
+.woocommerce .products .product {
+  box-shadow: 0 2px 2px 0 rgba(0, 6, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.01);
+  background-color: #fafafa !important; }
+  .woocommerce .products .product .onsale.out-of-stock-button {
+    color: #909090;
+    font-size: 12px;
+    text-transform: none;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0px;
+    background-color: #ececec;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    width: auto;
+    height: auto;
+    padding-top: 0; }
+    .woocommerce .products .product .onsale.out-of-stock-button .out-of-stock-button-inner {
+      width: 105px;
+      height: 25px;
+      display: table-cell;
+      vertical-align: middle; }
+  .woocommerce .products .product .onsale.onsale-outter {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    width: auto;
+    height: auto;
+    padding-top: 0;
+    text-wrap: none;
+    font-size: 12px;
+    text-transform: none;
+    font-style: normal;
+    font-weight: 600;
+    background-color: #27b10b;
+    letter-spacing: 0; }
+    .woocommerce .products .product .onsale.onsale-outter .onsale-inner {
+      display: table-cell;
+      line-height: normal;
+      padding: 5px 10px; }
+
 .td-call-center-container {
   color: #fff; }
   .td-call-center-container .td-working-hours {
