@@ -13,10 +13,12 @@ function main_style_setup()
 {
 
 
+    wp_register_style( 'td-fontawesome-css', CHILD_THEME_PATH_URI.'/content/css/all.css?13');
     wp_register_style( 'custom-css', CHILD_THEME_PATH_URI.'/content/css/custom.css?13');
     wp_register_script( 'custom-js', CHILD_THEME_PATH_URI . '/content/js/custom.js?13');
 
 
+    wp_enqueue_style( 'td-fontawesome-css' );
     wp_enqueue_style( 'custom-css' );
     wp_enqueue_script( 'custom-js' );
 }
