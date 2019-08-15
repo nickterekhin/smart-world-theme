@@ -1,101 +1,107 @@
 .woocommerce {
   ul.products {
+    margin:-10px;
     li{
 
       &.product {
-        background:none !important;
-        padding:10px;
-        margin-right:1px;
-        footer{
-          margin-top:10px;
-          .add-to-cart-link{
-            text-transform: uppercase;
-            font-weight: 600;
-            display:inline-block;
-            float:right;
-            i.fa{
-              margin-right:5px;
+        background: none !important;
+
+        margin-right: 1px;
+            &:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            .image-wrapper {
+              img {
+                opacity: 1;
+              }
+            }
+            h6 {
+              color: #999 !important;
+            }
+          }
+        .product-item-container {
+          padding: 10px;
+
+          footer {
+            margin-top: 10px;
+            .add-to-cart-link {
+              text-transform: uppercase;
+              font-weight: 600;
+              display: inline-block;
+              float: right;
+              i.fa {
+                margin-right: 5px;
+              }
+            }
+          }
+          .price {
+            text-align: left;
+            display: inline-block;
+            float: left;
+            del {
+              color: #c5c5c5;
+            }
+            ins {
+              color: #313131 !important;
+            }
+          }
+
+
+
+          a {
+            &.product-category {
+              background: none;
+            }
+            h6 {
+              text-align: left;
+              padding: 0;
+            }
+          }
+          .onsale {
+            &.out-of-stock-button {
+              color: #909090;
+              font-size: 12px;
+              text-transform: none;
+              font-style: normal;
+              font-weight: 600;
+              letter-spacing: 0px;
+              background-color: #ececec;
+              border-radius: 0px;
+              -webkit-border-radius: 0px;
+              -moz-border-radius: 0px;
+              width: auto;
+              height: auto;
+              padding-top: 0;
+              .out-of-stock-button-inner {
+                width: 105px;
+                height: 25px;
+                display: table-cell;
+                vertical-align: middle;
+              }
+            }
+            &.onsale-outter {
+              border-radius: 0;
+              -webkit-border-radius: 0;
+              -moz-border-radius: 0;
+              width: auto;
+              height: auto;
+              padding-top: 0;
+              text-wrap: none;
+              font-size: 12px;
+              text-transform: none;
+              font-style: normal;
+              font-weight: 600;
+              background-color: #27b10b;
+              letter-spacing: 0;
+              .onsale-inner {
+                display: table-cell;
+                line-height: normal;
+                padding: 5px 10px
+              }
+
             }
           }
         }
-        .price{
-          text-align:left;
-          display:inline-block;
-          float:left;
-          del{
-            color:#c5c5c5;
-          }
-          ins{
-            color: #313131 !important;
-          }
-        }
-
-        &:hover{
-          box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-          .image-wrapper{
-              img{
-                opacity: 1;
-              }
-          }
-          h6{
-            color:#999 !important;
-          }
-        }
-
-      a{
-        &.product-category{
-          background:none;
-        }
-        h6{
-          text-align: left;
-          padding:0;
-        }
       }
-      .onsale{
-        &.out-of-stock-button{
-          color: #909090;
-          font-size: 12px;
-          text-transform: none;
-          font-style: normal;
-          font-weight: 600;
-          letter-spacing: 0px;
-          background-color: #ececec;
-          border-radius: 0px;
-          -webkit-border-radius: 0px;
-          -moz-border-radius: 0px;
-          width: auto;
-          height: auto;
-          padding-top: 0;
-          .out-of-stock-button-inner{
-            width: 105px;
-            height: 25px;
-            display: table-cell;
-            vertical-align: middle;
-          }
-        }
-        &.onsale-outter{
-          border-radius: 0;
-          -webkit-border-radius: 0;
-          -moz-border-radius: 0;
-          width:auto;
-          height:auto;
-          padding-top:0;
-          text-wrap: none;
-          font-size: 12px;
-          text-transform: none;
-          font-style: normal;
-          font-weight: 600;
-          background-color:#27b10b;
-          letter-spacing: 0;
-          .onsale-inner{
-            display: table-cell;
-            line-height: normal;
-            padding:5px 10px
-          }
-
-        }
-      }
-    }
   }
   }
   .product{

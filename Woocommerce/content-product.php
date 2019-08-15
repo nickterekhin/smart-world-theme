@@ -32,6 +32,7 @@ $bridge_qode_options = bridge_qode_return_global_options();
 <li <?php post_class(); ?>>
     <?php } ?>
     <?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
+    <div class="product-item-container">
 
     <div class="top-product-section">
 
@@ -62,7 +63,6 @@ $bridge_qode_options = bridge_qode_return_global_options();
 
     </a>
     <footer>
-
             <?php
             /**
              * woocommerce_after_shop_loop_item_title hook
@@ -78,7 +78,5 @@ $bridge_qode_options = bridge_qode_return_global_options();
             <?php do_action('bridge_qode_action_woocommerce_after_product_image'); ?>
 
     </footer>
-
-
-
+    </div>
 </li>
