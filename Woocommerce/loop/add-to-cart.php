@@ -36,7 +36,7 @@ if ( ! $product->is_in_stock() ) : ?>
         </span>
     </span>
 <?php else :
-	echo apply_filters( 'woocommerce_loop_add_to_cart_link', // WPCS: XSS ok.
+	echo apply_filters( 'woocommerce_loop_add_to_cart_link',
 		sprintf( '<span class="add-to-cart-button-outer"><span class="add-to-cart-button-inner"><a href="%s" data-quantity="%s" class="%s" %s>%s</a></span></span>',
 			esc_url( $product->add_to_cart_url() ),
 			esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),

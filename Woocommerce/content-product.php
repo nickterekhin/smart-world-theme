@@ -19,15 +19,11 @@ defined( 'ABSPATH' ) || exit;
 
 global $product;
 
-//var_dump($product);
-// Ensure visibility.
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 $bridge_qode_options = bridge_qode_return_global_options();
-/*var_dump(array_filter($bridge_qode_options,function($i){
-    return preg_match('/^woo/',$i,$m)==1;
-},ARRAY_FILTER_USE_KEY));*/
+
 ?>
 <?php if ( version_compare( WOOCOMMERCE_VERSION, '3.4' ) >= 0 ) { ?>
 <li <?php wc_product_class( '', $product ); ?>>
@@ -53,7 +49,7 @@ $bridge_qode_options = bridge_qode_return_global_options();
             </span>
         </a>
 
-        <?php do_action('bridge_qode_action_woocommerce_after_product_image'); ?>
+
 
     </div>
     <a itemprop="url" href="<?php the_permalink(); ?>" class="product-category product-info">
@@ -63,14 +59,26 @@ $bridge_qode_options = bridge_qode_return_global_options();
             <div class="separator after-title-spearator small center"></div>
         <?php } ?>
 
-        <?php
-        /**
-         * woocommerce_after_shop_loop_item_title hook
-         *
-         * @hooked woocommerce_template_loop_rating - 5
-         * @hooked woocommerce_template_loop_price - 10
-         */
-        do_action( 'woocommerce_after_shop_loop_item_title' );
-        ?>
+
     </a>
+    <footer>
+
+            <?php
+            /**
+             * woocommerce_after_shop_loop_item_title hook
+             *
+             * @hooked woocommerce_template_loop_rating - 5
+             * @hooked woocommerce_template_loop_price - 10
+             */
+            do_action( 'woocommerce_after_shop_loop_item_title' );
+
+            ?>
+
+
+            <?php do_action('bridge_qode_action_woocommerce_after_product_image'); ?>
+
+    </footer>
+
+
+
 </li>

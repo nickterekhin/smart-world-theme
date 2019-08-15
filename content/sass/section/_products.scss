@@ -1,8 +1,56 @@
 .woocommerce {
-  .products {
-    .product {
-      box-shadow: 0 2px 2px 0 rgba(0, 6, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.01);
-      background-color: #fafafa !important;
+  ul.products {
+    li{
+
+      &.product {
+        background:none !important;
+        padding:10px;
+        margin-right:1px;
+        footer{
+          margin-top:10px;
+          .add-to-cart-link{
+            text-transform: uppercase;
+            font-weight: 600;
+            display:inline-block;
+            float:right;
+            i.fa{
+              margin-right:5px;
+            }
+          }
+        }
+        .price{
+          text-align:left;
+          display:inline-block;
+          float:left;
+          del{
+            color:#c5c5c5;
+          }
+          ins{
+            color: #313131 !important;
+          }
+        }
+
+        &:hover{
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+          .image-wrapper{
+              img{
+                opacity: 1;
+              }
+          }
+          h6{
+            color:#999 !important;
+          }
+        }
+
+      a{
+        &.product-category{
+          background:none;
+        }
+        h6{
+          text-align: left;
+          padding:0;
+        }
+      }
       .onsale{
         &.out-of-stock-button{
           color: #909090;
@@ -48,6 +96,7 @@
         }
       }
     }
+  }
   }
   .product{
 
