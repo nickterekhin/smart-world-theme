@@ -1,12 +1,19 @@
 .td-phones-list{
   list-style: none;
   li{
+
     display: inline-block;
     i{
       color:#fff;
+      margin-right:1px;
       &:hover{
         color:#fff;
       }
     }
   }
+  li+li{
+
+      margin-left:10px;
+  }
+
 }

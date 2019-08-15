@@ -3,9 +3,12 @@
   .td-phones-list li {
     display: inline-block; }
     .td-phones-list li i {
-      color: #fff; }
+      color: #fff;
+      margin-right: 1px; }
       .td-phones-list li i:hover {
         color: #fff; }
+  .td-phones-list li + li {
+    margin-left: 10px; }
 
 .woocommerce ul.products {
   margin: -10px; }
