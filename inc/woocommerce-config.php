@@ -17,7 +17,7 @@ if ( ! function_exists('bridge_qode_woocommerce_products_per_page') ) {
      */
     function bridge_qode_woocommerce_products_per_page()
     {
-        return 20;
+        return 30;
     }
 }
 function _td_change_out_of_stock_text($text)
