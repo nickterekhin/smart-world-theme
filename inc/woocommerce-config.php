@@ -8,6 +8,18 @@ add_filter('woocommerce_format_sale_price','_td_price_view',10,3);
 add_filter('woocommerce_product_add_to_cart_text','_td_add_to_cart_text',10,2);
 add_filter('woocommerce_product_single_add_to_cart_text','_td_add_to_cart_text');
 
+add_filter('loop_shop_per_page', 'bridge_qode_woocommerce_products_per_page', 20);
+
+if ( ! function_exists('bridge_qode_woocommerce_products_per_page') ) {
+    /**
+     * Function that sets number of products per page. Default is 9
+     * @return int number of products to be shown per page
+     */
+    function bridge_qode_woocommerce_products_per_page()
+    {
+        return 20;
+    }
+}
 function _td_change_out_of_stock_text($text)
 {
     return esc_html__("Нет в наличии",'tdev_smart_world');
