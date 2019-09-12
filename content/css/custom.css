@@ -156,4 +156,5 @@
   border-right: 1px solid #d7d7d7;
   padding: 0 10px; }
   .woocommerce aside .filter--style-premmerce .filter__item {
+    border: none;
     border-top: 1px solid #d7d7d7; }
