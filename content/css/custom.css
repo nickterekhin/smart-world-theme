@@ -1,54 +1,157 @@
-/*
-Error: File to import not found or unreadable: section/_filters.
-        on line 5 of custom.scss
+.td-phones-list {
+  list-style: none; }
+  .td-phones-list li {
+    display: inline-block; }
+    .td-phones-list li i {
+      color: #fff;
+      margin-right: 1px; }
+      .td-phones-list li i:hover {
+        color: #fff; }
+  .td-phones-list li + li {
+    margin-left: 10px; }
 
-1: @import "section/_header";
-2: @import "section/_title";
-3: @import "section/_products";
-4: @import "section/_footer";
-5: @import "section/_filters";
+.breadcrumb {
+  left: 0 !important;
+  margin-top: 30px !important; }
 
-Backtrace:
-custom.scss:5
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/import_node.rb:67:in `rescue in import'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/import_node.rb:44:in `import'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/import_node.rb:28:in `imported_file'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/import_node.rb:37:in `css_import?'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:310:in `visit_import'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/stack.rb:79:in `block in with_base'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/stack.rb:135:in `with_frame'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/stack.rb:79:in `with_base'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/base.rb:52:in `map'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:157:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/visitors/perform.rb:10:in `visit'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/tree/root_node.rb:20:in `render'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/engine.rb:290:in `render'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/plugin/compiler.rb:464:in `update_stylesheet'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/plugin/compiler.rb:209:in `each'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/plugin.rb:82:in `update_stylesheets'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/exec/sass_scss.rb:338:in `watch_or_update'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/exec/sass_scss.rb:51:in `process_result'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/exec/base.rb:50:in `parse'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/exec/base.rb:18:in `parse!'
-/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/bin/scss:13:in `<top (required)>'
-/usr/local/bin/scss:22:in `load'
-/usr/local/bin/scss:22:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: section/_filters.\A         on line 5 of custom.scss\A \A 1: @import \"section/_header\";\A 2: @import \"section/_title\";\A 3: @import \"section/_products\";\A 4: @import \"section/_footer\";\A 5: @import \"section/_filters\";"; }
+.woocommerce ul.products {
+  margin: -10px; }
+  .woocommerce ul.products li.product {
+    background: none !important;
+    margin-right: 1px; }
+    .woocommerce ul.products li.product:hover {
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); }
+      .woocommerce ul.products li.product:hover .image-wrapper img {
+        opacity: 1; }
+      .woocommerce ul.products li.product:hover h6 {
+        color: #999 !important; }
+    .woocommerce ul.products li.product .product-item-container {
+      padding: 10px; }
+      .woocommerce ul.products li.product .product-item-container footer {
+        margin-top: 10px; }
+        .woocommerce ul.products li.product .product-item-container footer .add-to-cart-link {
+          text-transform: uppercase;
+          font-weight: 600;
+          display: inline-block;
+          float: right; }
+          .woocommerce ul.products li.product .product-item-container footer .add-to-cart-link i.fa {
+            margin-right: 5px; }
+      .woocommerce ul.products li.product .product-item-container .price {
+        text-align: left;
+        display: inline-block;
+        float: left; }
+        .woocommerce ul.products li.product .product-item-container .price del {
+          color: #c5c5c5; }
+        .woocommerce ul.products li.product .product-item-container .price ins {
+          color: #313131 !important; }
+      .woocommerce ul.products li.product .product-item-container a.product-category {
+        background: none; }
+      .woocommerce ul.products li.product .product-item-container a h6 {
+        text-align: left;
+        padding: 0; }
+      .woocommerce ul.products li.product .product-item-container .onsale.out-of-stock-button {
+        color: #909090;
+        font-size: 12px;
+        text-transform: none;
+        font-style: normal;
+        font-weight: 600;
+        letter-spacing: 0px;
+        background-color: #ececec;
+        border-radius: 0px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        width: auto;
+        height: auto;
+        padding-top: 0; }
+        .woocommerce ul.products li.product .product-item-container .onsale.out-of-stock-button .out-of-stock-button-inner {
+          width: 105px;
+          height: 25px;
+          display: table-cell;
+          vertical-align: middle; }
+      .woocommerce ul.products li.product .product-item-container .onsale.onsale-outter {
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        width: auto;
+        height: auto;
+        padding-top: 0;
+        text-wrap: none;
+        font-size: 12px;
+        text-transform: none;
+        font-style: normal;
+        font-weight: 600;
+        background-color: #27b10b;
+        letter-spacing: 0; }
+        .woocommerce ul.products li.product .product-item-container .onsale.onsale-outter .onsale-inner {
+          display: table-cell;
+          line-height: normal;
+          padding: 5px 10px; }
+
+.td-call-center-container {
+  color: #fff; }
+  .td-call-center-container .td-working-hours {
+    list-style: none; }
+    .td-call-center-container .td-working-hours li {
+      color: #fff;
+      margin-bottom: 10px; }
+      .td-call-center-container .td-working-hours li label {
+        margin-right: 10px;
+        font-weight: 600; }
+      .td-call-center-container .td-working-hours li span {
+        background: #27b10b;
+        color: #fff;
+        padding: 3px 5px; }
+  .td-call-center-container .td-contact-info {
+    list-style: none; }
+    .td-call-center-container .td-contact-info li {
+      color: #fff; }
+      .td-call-center-container .td-contact-info li i {
+        margin-right: 5px;
+        color: #999; }
+      .td-call-center-container .td-contact-info li a {
+        color: #fff; }
+  .td-call-center-container.td-maintenance .td-working-hours {
+    list-style: none; }
+    .td-call-center-container.td-maintenance .td-working-hours li {
+      color: #313131;
+      margin-bottom: 10px; }
+      .td-call-center-container.td-maintenance .td-working-hours li label {
+        margin-right: 10px;
+        font-weight: 600; }
+      .td-call-center-container.td-maintenance .td-working-hours li span {
+        background: #313131;
+        color: #fff;
+        padding: 3px 5px; }
+  .td-call-center-container.td-maintenance .td-contact-info {
+    list-style: none; }
+    .td-call-center-container.td-maintenance .td-contact-info li {
+      color: #313131; }
+      .td-call-center-container.td-maintenance .td-contact-info li i {
+        margin-right: 5px;
+        color: #666; }
+      .td-call-center-container.td-maintenance .td-contact-info li a {
+        color: #313131; }
+
+.image.wp-image-15100 {
+  width: 50%; }
+.image.wp-image-15119 {
+  width: 50%; }
+.image.wp-image-18346 {
+  width: 50%; }
+
+.td-free-call-line {
+  margin-top: 30px; }
+  .td-free-call-line .td-free-call-header {
+    display: block;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600; }
+  .td-free-call-line .td-free-call-descr {
+    font-size: 11px;
+    background: #999;
+    color: #313131;
+    padding: 3px 5px; }
+
+.woocommerce aside {
+  border-right: 1px solid #d7d7d7;
+  padding: 0 10px; }
