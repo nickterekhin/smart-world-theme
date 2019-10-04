@@ -65,7 +65,7 @@ function woocommerce_catalog_ordering() {
             'popularity' => __( 'по популярности', 'woocommerce' ),
             'rating'     => __( 'По рейтингу', 'woocommerce' ),
             'date'       => __( 'Последние', 'woocommerce' ),
-            'price'      => __( 'Щт дещевых к дорогим', 'woocommerce' ),
+            'price'      => __( 'От дещевых к дорогим', 'woocommerce' ),
             'price-desc' => __( 'От дорогих к дешевым', 'woocommerce' ),
         )
     );

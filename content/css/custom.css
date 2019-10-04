@@ -157,4 +157,16 @@
   padding: 0 10px; }
   .woocommerce aside .filter--style-premmerce .filter__item {
     border: none;
-    border-top: 1px solid #d7d7d7; }
+    border-top: 1px solid #d7d7d7;
+    padding: 15px 15px 15px 0; }
+    .woocommerce aside .filter--style-premmerce .filter__item .filter__title {
+      color: #7b07ab; }
+    .woocommerce aside .filter--style-premmerce .filter__item .filter__properties-item:hover {
+      background: #fde5f5;
+      color: #ac0dc7; }
+      .woocommerce aside .filter--style-premmerce .filter__item .filter__properties-item:hover .filter__checkgroup-title {
+        color: #ac0dc7; }
+  .woocommerce aside .filter__checkgroup .filter__checkgroup-link .filter__checkgroup-check::before {
+    background: #27b10b; }
+  .woocommerce aside .filter__checkgroup .filter__checkgroup-aside .filter__checkgroup-count {
+    top: 0; }

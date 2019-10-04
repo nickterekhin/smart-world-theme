@@ -40,3 +40,4 @@ add_filter('quform_element_valid_1_5', function ($valid, $value, Quform_Element_
 
     return $valid;
 }, 10, 3);
+
