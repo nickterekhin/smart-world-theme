@@ -41,3 +41,18 @@ add_filter('quform_element_valid_1_5', function ($valid, $value, Quform_Element_
     return $valid;
 }, 10, 3);
 
+    function bridge_qode_woo_qode_product_searchform($form) {
+
+        $form = '<form role="search" method="get" id="searchform" action="' . esc_url( home_url( '/'  ) ) . '">
+			<div>
+				<label class="screen-reader-text" for="s">' . esc_html__( 'Поиск:', 'bridge' ) . '</label>
+				<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' . esc_html__( 'Поиск продукта', 'bridge' ) . '" />
+				<input type="submit" id="searchsubmit" value="&#xf002" />
+				<input type="hidden" name="post_type" value="product" />
+			</div>
+		</form>';
+
+        return $form;
+
+    }
+    add_filter( 'get_product_search_form' , 'bridge_qode_woo_qode_product_searchform' );
