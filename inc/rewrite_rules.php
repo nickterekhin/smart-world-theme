@@ -73,7 +73,7 @@ function td_rewrite_post_title($permalink, $post, $leavename )
     return $permalink;
 }
 
-add_filter("wp_get_nav_menu_items",'td_rewrite_menu_items',10,3);
+//add_filter("wp_get_nav_menu_items",'td_rewrite_menu_items',10,3);
 
 function td_rewrite_menu_items($items,$menu,$args)
 {
