@@ -169,6 +169,8 @@
     .woocommerce aside .filter--style-premmerce .filter__item .pc-range-slider__wrapper {
       height: 30px;
       display: inline; }
+      .woocommerce aside .filter--style-premmerce .filter__item .pc-range-slider__wrapper .pc-range-slider__control .ui-slider-range {
+        background: #27b10b; }
   .woocommerce aside .filter__checkgroup .filter__checkgroup-link .filter__checkgroup-check::before {
     background: #27b10b; }
   .woocommerce aside .filter__checkgroup .filter__checkgroup-aside .filter__checkgroup-count {

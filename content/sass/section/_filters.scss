@@ -24,6 +24,12 @@
           height: 30px;
           //overflow: hidden;
           display: inline;
+          .pc-range-slider__control {
+            .ui-slider-range
+            {
+              background:#27b10b;
+            }
+          }
         }
       }
 
