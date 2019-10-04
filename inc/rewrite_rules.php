@@ -84,6 +84,7 @@ function td_rewrite_menu_items($items,$menu,$args)
         if($t->post_type=='nav_menu_item' && $t->object=='product_cat' && $t->type=='taxonomy')
         {
             $term = get_term($t->object_id,$t->object);
+            $term->description = '';
             var_dump($term);
             $t->url = home_url().'/'.$term->slug;
 
