@@ -48,6 +48,7 @@ add_filter('post_type_link','td_rewrite_post_title',10,3);
 function td_rewrite_post_title($permalink, $post, $leavename )
 {
 
+
    if($post->post_type=='product') {
         if (get_query_var('product_cat')==null) {
             $term = get_the_terms($post->ID, 'product_cat');
@@ -64,7 +65,8 @@ function td_rewrite_post_title($permalink, $post, $leavename )
         }
         else
         {
-            $permalink = home_url()."/".get_query_var('product_cat')."/".$post->post_name;
+            $permalink = home_url()."/".$post->post_type."/".$post->post_name;
+            //var_dump($permalink);
         }
         return $permalink;
     }
