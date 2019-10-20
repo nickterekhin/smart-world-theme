@@ -6,6 +6,16 @@ define("CHILD_THEME_MAIN_STYLE",get_stylesheet_uri());
 define("CHILD_THEME_UPLOAD_URI",wp_upload_dir()['baseurl']);
 
 include('inc/rewrite_rules.php');
+
+function bridge_qode_woocommerce_single_type() {
+    $type = '';
+    if (bridge_qode_is_woocommerce_installed()) {
+        $type = bridge_qode_options()->getOptionValue('woo_product_single_type');
+    }
+
+    return $type;
+}
+include('framework/TDFramework.php');
 include('inc/woocommerce-config.php');
 
 
@@ -57,3 +67,100 @@ add_filter('quform_element_valid_1_5', function ($valid, $value, Quform_Element_
 
     }
     add_filter( 'get_product_search_form' , 'bridge_qode_woo_qode_product_searchform' );
+
+if (!function_exists('bridge_qode_woocommerce_content')){
+
+    /**
+     * Output WooCommerce content.
+     *
+     * This function is only used in the optional 'woocommerce.php' template
+     * which people can add to their themes to add basic woocommerce support
+     * without hooks or modifying core templates.
+     *
+     * @access public
+     * @return void
+     */
+    function bridge_qode_woocommerce_content() {
+
+        if ( is_singular( 'product' ) ) {
+
+            while ( have_posts() ) : the_post();
+
+                wc_get_template_part( 'content', 'single-product' );
+
+            endwhile;
+
+        } else {
+
+
+
+            if ( have_posts() ) {
+
+                /**
+                 * Hook: woocommerce_before_shop_loop.
+                 *
+                 * @hooked wc_print_notices - 10
+                 * @hooked woocommerce_result_count - 20
+                 * @hooked woocommerce_catalog_ordering - 30
+                 */
+                do_action( 'woocommerce_before_shop_loop' );
+
+                woocommerce_product_loop_start();
+
+                if ( wc_get_loop_prop( 'total' ) ) {
+                    while ( have_posts() ) {
+                        the_post();
+
+                        /**
+                         * Hook: woocommerce_shop_loop.
+                         *
+                         * @hooked WC_Structured_Data::generate_product_data() - 10
+                         */
+                        do_action( 'woocommerce_shop_loop' );
+
+                        wc_get_template_part( 'content', 'product' );
+                    }
+                }
+
+                woocommerce_product_loop_end();
+
+                /**
+                 * Hook: woocommerce_after_shop_loop.
+                 *
+                 * @hooked woocommerce_pagination - 10
+                 */
+                do_action( 'woocommerce_after_shop_loop' );
+
+
+            } else {
+                /**
+                 * Hook: woocommerce_no_products_found.
+                 *
+                 * @hooked wc_no_products_found - 10
+                 */
+                do_action( 'woocommerce_no_products_found' );
+            }
+
+
+            do_action( 'woocommerce_archive_description' );
+
+        }
+    }
+}
+
+if ( ! function_exists( 'woocommerce_taxonomy_archive_description' ) ) {
+
+    /**
+     * Show an archive description on taxonomy archives.
+     */
+    function woocommerce_taxonomy_archive_description() {
+        if ( is_product_taxonomy() && 0 === absint( get_query_var( 'paged' ) ) ) {
+            $term = get_queried_object();
+
+            if ( $term && ! empty( $term->description ) ) {
+                echo '<div style="clear: both;"></div>';
+                echo '<div class="term-description">' . wc_format_content( $term->description ) . '</div>'; // WPCS: XSS ok.
+            }
+        }
+    }
+}

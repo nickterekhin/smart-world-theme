@@ -175,3 +175,44 @@
     background: #27b10b; }
   .woocommerce aside .filter__checkgroup .filter__checkgroup-aside .filter__checkgroup-count {
     top: 0; }
+
+.woocommerce .product .onsale {
+  left: 120px;
+  top: -17px; }
+  .woocommerce .product .onsale.out-of-stock-button {
+    color: #909090;
+    font-size: 12px;
+    text-transform: none;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0px;
+    background-color: #ececec;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    width: auto;
+    height: auto;
+    padding-top: 0; }
+    .woocommerce .product .onsale.out-of-stock-button .out-of-stock-button-inner {
+      width: 105px;
+      height: 25px;
+      display: table-cell;
+      vertical-align: middle; }
+  .woocommerce .product .onsale.onsale-outter {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    width: auto;
+    height: auto;
+    padding-top: 0;
+    text-wrap: none;
+    font-size: 12px;
+    text-transform: none;
+    font-style: normal;
+    font-weight: 600;
+    background-color: #27b10b;
+    letter-spacing: 0; }
+    .woocommerce .product .onsale.onsale-outter .onsale-inner {
+      display: table-cell;
+      line-height: normal;
+      padding: 5px 10px; }
