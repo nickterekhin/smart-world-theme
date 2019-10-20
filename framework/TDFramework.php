@@ -5,9 +5,13 @@ class TDFramework
 {
     function getTitleImageACF($img, $fieldName,$term_id,$taxonomy)
     {
-        if(function_exists("get_field"))
-            return get_field($fieldName,$taxonomy.'_'.$term_id);
-        return $img;
+        $res = false;
+        if(function_exists("get_field")) {
+            $res = get_field($fieldName, $taxonomy . '_' . $term_id);
+
+
+        }
+        return $res?$res:$img;
     }
 }
 

@@ -30,6 +30,8 @@ $obj = $wp_query->get_queried_object();
 if($obj instanceof WP_Term && $obj->taxonomy =='product_cat')
     $bridge_qode_title_image = $TD->getTitleImageACF($bridge_qode_title_image,'header_image',$obj->term_id,'product_cat');
 
+
+
 $bridge_qode_title_image_height = "";
 $bridge_qode_title_image_width = "";
 
@@ -602,6 +604,7 @@ $bridge_qode_animation = '';
 if($bridge_qode_title_content_animation == 'yes' || $bridge_qode_title_animation == 'yes' || $bridge_qode_separator_animation == 'yes' || $bridge_qode_subtitle_animation == 'yes' || $bridge_qode_breadcrumbs_animation == 'yes') {
 	$bridge_qode_animation = 'data-animation="yes"';
 }
+
 
 if(!bridge_qode_is_title_hidden()) { ?>
 	<div class="title_outer <?php echo bridge_qode_get_module_part( $bridge_qode_animate_title_class.$bridge_qode_title_text_shadow ); if($bridge_qode_responsive_title_image == 'yes' && $bridge_qode_show_title_image == true){ echo ' with_image'; }?>"  <?php print bridge_qode_get_module_part( $bridge_qode_animation ); ?>  <?php echo 'data-height="'.$bridge_qode_title_height.'"'; if($bridge_qode_title_height != '' && $bridge_qode_animate_title_area == 'area_top_bottom'){ echo 'style="opacity:0;height:' . $bridge_qode_header_height_padding .'px;"'; } ?>>
