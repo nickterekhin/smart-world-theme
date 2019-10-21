@@ -10,6 +10,12 @@ add_filter('woocommerce_product_single_add_to_cart_text','_td_add_to_cart_text')
 
 add_filter('loop_shop_per_page', 'bridge_qode_woocommerce_products_per_page', 20);
 
+add_filter('wc_empty_cart_message','td_empty_cart_message');
+
+function td_empty_cart_message($message)
+{
+    return "Корзина пуста";
+}
 if ( ! function_exists('bridge_qode_woocommerce_products_per_page') ) {
     /**
      * Function that sets number of products per page. Default is 9
