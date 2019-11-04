@@ -4,10 +4,11 @@ add_filter("product_cat_rewrite_rules","td_product_category_rewrite");
 
 function td_product_category_rewrite($rules)
 {
+
     $args = array(
         "hide_empty"=>0,
         'taxonomy'=> 'product_cat',
-        'parent'=>0,
+        //'parent'=>0,
     );
 
     $categories = get_categories($args);
@@ -15,13 +16,24 @@ function td_product_category_rewrite($rules)
     {
         $categs_slugs=array();
 
+
+
         /** @var WP_Term $categs */
         foreach($categories as $categs)
         {
-            if(is_object($categs) && !is_wp_error($categs))
-            {
-                $categs_slugs[] = $categs->slug;
+            if(is_object($categs) && !is_wp_error($categs)) {
+
+
+                    $slug = get_term_parents_list($categs->term_id,'product_cat',array(
+                        'separator' => '/',
+                        'link'      => false,
+                        'format'    => 'slug',
+                    ));
+
+                $categs_slugs[] = !empty($slug)?preg_replace('/\/$/','',$slug):$categs->slug;
             }
+
+
         }
 
         if(!empty($categs_slugs))
@@ -29,7 +41,7 @@ function td_product_category_rewrite($rules)
             $rules = array();
             foreach($categs_slugs as $slug)
             {
-                $rules['('.$slug.')'.'/([^/]+)/?$'] = 'index.php?product_cat=$matches[1]&place=$matches[2]';
+               // $rules['('.$slug.')'.'/([^/]+)/?$'] = 'index.php?product_cat=$matches[1]&place=$matches[2]';
                 $rules['('.$slug.')'.'/feed/(feed|rdf|rss|rss2|atom)/?$'] = 'index.php?product_cat=$matches[1]&feed=$matches[2]';
                 $rules['('.$slug.')'.'/(feed|rdf|rss|rss2|atom)/?$'] = 'index.php?product_cat=$matches[1]&feed=$matches[2]';
                 $rules['('.$slug.')'.'/embed/?$'] = 'index.php?product_cat=$matches[1]&embed=true';
@@ -39,8 +51,11 @@ function td_product_category_rewrite($rules)
             }
         }
     }
+
     return $rules;
 }
+
+
 
 add_filter("post_link",'td_rewrite_post_title',10,3);
 add_filter('post_type_link','td_rewrite_post_title',10,3);
@@ -75,7 +90,7 @@ function td_rewrite_post_title($permalink, $post, $leavename )
     return $permalink;
 }
 
-//add_filter("wp_get_nav_menu_items",'td_rewrite_menu_items',10,3);
+add_filter("wp_get_nav_menu_items",'td_rewrite_menu_items',10,3);
 
 function td_rewrite_menu_items($items,$menu,$args)
 {
