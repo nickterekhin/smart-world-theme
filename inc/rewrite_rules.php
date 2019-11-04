@@ -102,8 +102,10 @@ function td_rewrite_menu_items($items,$menu,$args)
         {
             $term = get_term($t->object_id,$t->object);
             $term->description = '';
-            //var_dump($term);
-            $t->url = home_url().'/'.$term->slug;
+            $slig = get_term_parents_list($t->objext_id,$t->object,array('separator' => '/',
+                'link'      => false,
+                'format'    => 'slug'));
+            $t->url = home_url().'/'.$slug;
 
         }
     }
