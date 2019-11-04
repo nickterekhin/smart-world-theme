@@ -102,7 +102,7 @@ function td_rewrite_menu_items($items,$menu,$args)
         {
             $term = get_term($t->object_id,$t->object);
             $term->description = '';
-            $slig = get_term_parents_list($t->objext_id,$t->object,array('separator' => '/',
+            $slig = get_term_parents_list($t->object_id,$t->object,array('separator' => '/',
                 'link'      => false,
                 'format'    => 'slug'));
             $t->url = home_url().'/'.$slug;
