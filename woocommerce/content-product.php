@@ -54,7 +54,7 @@ $bridge_qode_options = bridge_qode_return_global_options();
 
     </div>
     <a itemprop="url" href="<?php the_permalink(); ?>" class="product-category product-info">
-        <h6 itemprop="name"><?php the_title(); ?></h6>
+        <h3 class="product-title title-6" itemprop="name"><?php the_title(); ?></h3>
 
         <?php if(isset($bridge_qode_options['woo_products_show_title_sep']) && $bridge_qode_options['woo_products_show_title_sep'] == 'yes') { ?>
             <div class="separator after-title-spearator small center"></div>

@@ -40,7 +40,8 @@ function main_style_setup()
 add_filter('show_admin_bar', '__return_false');
 
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_script('jquery-mask-plugin', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js', array(), '1.14.15', true);
+// todo: ask why it was here?
+//    wp_enqueue_script('jquery-mask-plugin', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js', array(), '1.14.15', true);
 });
 
 add_filter('quform_element_valid_1_5', function ($valid, $value, Quform_Element_Field $element) {
@@ -186,7 +187,7 @@ if(!function_exists('bridge_qode_custom_breadcrumbs')) {
         } else {
             $delimiter = '<span class="delimiter"' . $bread_style . '>&nbsp;>&nbsp;</span>'; // default delimiter between crumbs
         }
-        $home = esc_html__('Home', 'bridge'); // text for the 'Home' link
+        $home = esc_html__('Главная', 'bridge'); // text for the 'Home' link
         $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
         $before = '<span class="current"' . $bread_style . '>'; // tag before the current crumb
         $after = '</span>'; // tag after the current crumb

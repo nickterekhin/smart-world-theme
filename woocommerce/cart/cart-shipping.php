@@ -51,7 +51,7 @@ $calculator_text          = '';
 						printf( esc_html__( 'Shipping to %s.', 'bridge' ) . ' ', '<strong>' . esc_html( $formatted_destination ) . '</strong>' );
 						$calculator_text = esc_html__( 'Change address', 'bridge' );
                     } else {
-						echo wp_kses_post( apply_filters( 'woocommerce_shipping_estimate_html', esc_html__( 'Shipping options will be updated during checkout.', 'bridge' ) ) );
+						echo wp_kses_post( apply_filters( 'woocommerce_shipping_estimate_html', esc_html__( 'Варианты доставки будут обновлены во время оформления заказа.', 'bridge' ) ) );
                     }
                     ?>
                 </p>
@@ -60,10 +60,10 @@ $calculator_text          = '';
         elseif ( ! $has_calculated_shipping || ! $formatted_destination ) :
             esc_html_e( 'Enter your address to view shipping options.', 'bridge' );
         elseif ( ! is_cart() ) :
-            echo wp_kses_post( apply_filters( 'woocommerce_no_shipping_available_html', esc_html__( 'There are no shipping methods available. Please ensure that your address has been entered correctly, or contact us if you need any help.', 'bridge' ) ) );
+            echo wp_kses_post( apply_filters( 'woocommerce_no_shipping_available_html', esc_html__( 'Нет доступных способов доставки. Пожалуйста, убедитесь, что ваш адрес был введен правильно, или свяжитесь с нами, если вам нужна помощь.', 'bridge' ) ) );
         else :
             // Translators: $s shipping destination.
-            echo wp_kses_post( apply_filters( 'woocommerce_cart_no_shipping_available_html', sprintf( esc_html__( 'No shipping options were found for %s.', 'bridge' ) . ' ', '<strong>' . esc_html( $formatted_destination ) . '</strong>' ) ) );
+            echo wp_kses_post( apply_filters( 'woocommerce_cart_no_shipping_available_html', sprintf( esc_html__( 'Не найдены варианты доставки для %s.', 'bridge' ) . ' ', '<strong>' . esc_html( $formatted_destination ) . '</strong>' ) ) );
             $calculator_text = esc_html__( 'Enter a different address', 'bridge' );
         endif;
         ?>

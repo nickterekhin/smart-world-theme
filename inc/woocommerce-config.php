@@ -32,7 +32,7 @@ function _td_change_out_of_stock_text($text)
 }
 function _td_change_sales_flash_text($text,$post,$product)
 {
-    return '<span class="onsale onsale-outter"><span class="onsale-inner">'.esc_html__( 'В наличии', 'tdev_smart_world' ).'</span></span>';
+    return '<span class="onsale onsale-outter"><span class="onsale-inner">'.esc_html__( 'Акция', 'tdev_smart_world' ).'</span></span>';
 }
 
 /**
@@ -55,7 +55,7 @@ function _td_price_view($price,$regular_price,$sale_price)
 
 function _td_add_to_cart_text()
 {
-    return 'В корзину';
+    return 'Купить';
 }
 
 
