@@ -19,11 +19,6 @@
     margin-left: 10px;
 }
 
-.breadcrumb {
-    left: 0 !important;
-    margin-top: 30px !important;
-}
-
 .woocommerce ul.products {
     margin: -10px;
 }
@@ -408,9 +403,12 @@
 }
 
 /** Breadcrumbs */
+
 .breadcrumb {
-    margin-top: 20px !important;
+    left: 0 !important;
+    margin-top: 4px !important;
 }
+
 
 .breadcrumbs {
     display: block;
@@ -621,4 +619,19 @@
 
 .header_top_bottom_holder .header_top {
     background-color: rgba(0, 0, 0, 0.64) !important;
+}
+
+.title_outer.with_image .title .title_holder {
+    position: static !important;
+    margin-top: 16px;
+}
+
+.position_center.title .title_subtitle_holder {
+    text-align: left !important;
+}
+
+@media only screen and (min-width: 991px) {
+    .hide-on-desktop {
+        display: none;
+    }
 }
