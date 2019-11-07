@@ -1,13 +1,14 @@
 <?php
 
-define("CHILD_THEME_PATH_URI",get_stylesheet_directory_uri());
-define("CHILD_THEME_PATH",get_stylesheet_directory());
-define("CHILD_THEME_MAIN_STYLE",get_stylesheet_uri());
-define("CHILD_THEME_UPLOAD_URI",wp_upload_dir()['baseurl']);
+define("CHILD_THEME_PATH_URI", get_stylesheet_directory_uri());
+define("CHILD_THEME_PATH", get_stylesheet_directory());
+define("CHILD_THEME_MAIN_STYLE", get_stylesheet_uri());
+define("CHILD_THEME_UPLOAD_URI", wp_upload_dir()['baseurl']);
 
 include('inc/rewrite_rules.php');
 
-function bridge_qode_woocommerce_single_type() {
+function bridge_qode_woocommerce_single_type()
+{
     $type = '';
     if (bridge_qode_is_woocommerce_installed()) {
         $type = bridge_qode_options()->getOptionValue('woo_product_single_type');
@@ -15,25 +16,25 @@ function bridge_qode_woocommerce_single_type() {
 
     return $type;
 }
+
 include('framework/TDFramework.php');
 include('inc/woocommerce-config.php');
 
 
-add_action('wp_enqueue_scripts', 'main_style_setup',20);
+add_action('wp_enqueue_scripts', 'main_style_setup', 20);
 function main_style_setup()
 {
 
 
-    wp_register_style( 'td-fontawesome-css', CHILD_THEME_PATH_URI.'/content/css/all.css?13');
-    wp_register_style( 'custom-css', CHILD_THEME_PATH_URI.'/content/css/custom.css?13');
-    wp_register_script( 'custom-js', CHILD_THEME_PATH_URI . '/content/js/custom.js?13');
+    wp_register_style('td-fontawesome-css', CHILD_THEME_PATH_URI . '/content/css/all.css?13');
+    wp_register_style('custom-css', CHILD_THEME_PATH_URI . '/content/css/custom.css?13');
+    wp_register_script('custom-js', CHILD_THEME_PATH_URI . '/content/js/custom.js?13');
 
 
-    wp_enqueue_style( 'td-fontawesome-css' );
-    wp_enqueue_style( 'custom-css' );
-    wp_enqueue_script( 'custom-js' );
+    wp_enqueue_style('td-fontawesome-css');
+    wp_enqueue_style('custom-css');
+    wp_enqueue_script('custom-js');
 }
-
 
 
 //add_filter( 'use_block_editor_for_post', '__return_false' );
@@ -45,7 +46,7 @@ add_action('wp_enqueue_scripts', function () {
 });
 
 add_filter('quform_element_valid_1_5', function ($valid, $value, Quform_Element_Field $element) {
-    if ( ! preg_match('/^\(\d{3}\) \d{3}\-\d{4}$/', $value)) {
+    if (!preg_match('/^\(\d{3}\) \d{3}\-\d{4}$/', $value)) {
         $element->addError('Введите номер телефона в формате (000) 000-0000');
         $valid = false;
     }
@@ -53,23 +54,25 @@ add_filter('quform_element_valid_1_5', function ($valid, $value, Quform_Element_
     return $valid;
 }, 10, 3);
 
-    function bridge_qode_woo_qode_product_searchform($form) {
+function bridge_qode_woo_qode_product_searchform($form)
+{
 
-        $form = '<form role="search" method="get" id="searchform" action="' . esc_url( home_url( '/'  ) ) . '">
+    $form = '<form role="search" method="get" id="searchform" action="' . esc_url(home_url('/')) . '">
 			<div>
-				<label class="screen-reader-text" for="s">' . esc_html__( 'Поиск:', 'bridge' ) . '</label>
-				<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' . esc_html__( 'Поиск продукта', 'bridge' ) . '" />
+				<label class="screen-reader-text" for="s">' . esc_html__('Поиск:', 'bridge') . '</label>
+				<input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' . esc_html__('Поиск продукта', 'bridge') . '" />
 				<input type="submit" id="searchsubmit" value="&#xf002" />
 				<input type="hidden" name="post_type" value="product" />
 			</div>
 		</form>';
 
-        return $form;
+    return $form;
 
-    }
-    add_filter( 'get_product_search_form' , 'bridge_qode_woo_qode_product_searchform' );
+}
 
-if (!function_exists('bridge_qode_woocommerce_content')){
+add_filter('get_product_search_form', 'bridge_qode_woo_qode_product_searchform');
+
+if (!function_exists('bridge_qode_woocommerce_content')) {
 
     /**
      * Output WooCommerce content.
@@ -81,21 +84,21 @@ if (!function_exists('bridge_qode_woocommerce_content')){
      * @access public
      * @return void
      */
-    function bridge_qode_woocommerce_content() {
+    function bridge_qode_woocommerce_content()
+    {
 
-        if ( is_singular( 'product' ) ) {
+        if (is_singular('product')) {
 
-            while ( have_posts() ) : the_post();
+            while (have_posts()) : the_post();
 
-                wc_get_template_part( 'content', 'single-product' );
+                wc_get_template_part('content', 'single-product');
 
             endwhile;
 
         } else {
 
 
-
-            if ( have_posts() ) {
+            if (have_posts()) {
 
                 /**
                  * Hook: woocommerce_before_shop_loop.
@@ -104,12 +107,12 @@ if (!function_exists('bridge_qode_woocommerce_content')){
                  * @hooked woocommerce_result_count - 20
                  * @hooked woocommerce_catalog_ordering - 30
                  */
-                do_action( 'woocommerce_before_shop_loop' );
+                do_action('woocommerce_before_shop_loop');
 
                 woocommerce_product_loop_start();
 
-                if ( wc_get_loop_prop( 'total' ) ) {
-                    while ( have_posts() ) {
+                if (wc_get_loop_prop('total')) {
+                    while (have_posts()) {
                         the_post();
 
                         /**
@@ -117,9 +120,9 @@ if (!function_exists('bridge_qode_woocommerce_content')){
                          *
                          * @hooked WC_Structured_Data::generate_product_data() - 10
                          */
-                        do_action( 'woocommerce_shop_loop' );
+                        do_action('woocommerce_shop_loop');
 
-                        wc_get_template_part( 'content', 'product' );
+                        wc_get_template_part('content', 'product');
                     }
                 }
 
@@ -130,7 +133,7 @@ if (!function_exists('bridge_qode_woocommerce_content')){
                  *
                  * @hooked woocommerce_pagination - 10
                  */
-                do_action( 'woocommerce_after_shop_loop' );
+                do_action('woocommerce_after_shop_loop');
 
 
             } else {
@@ -139,38 +142,38 @@ if (!function_exists('bridge_qode_woocommerce_content')){
                  *
                  * @hooked wc_no_products_found - 10
                  */
-                do_action( 'woocommerce_no_products_found' );
+                do_action('woocommerce_no_products_found');
             }
 
 
-            do_action( 'woocommerce_archive_description' );
+            do_action('woocommerce_archive_description');
 
         }
     }
 }
 
-if ( ! function_exists( 'woocommerce_taxonomy_archive_description' ) ) {
+if (!function_exists('woocommerce_taxonomy_archive_description')) {
 
     /**
      * Show an archive description on taxonomy archives.
      */
-    function woocommerce_taxonomy_archive_description() {
-        if ( is_product_taxonomy() && 0 === absint( get_query_var( 'paged' ) ) ) {
+    function woocommerce_taxonomy_archive_description()
+    {
+        if (is_product_taxonomy() && 0 === absint(get_query_var('paged'))) {
             $term = get_queried_object();
 
-            if ( $term && ! empty( $term->description ) ) {
+            if ($term && !empty($term->description)) {
                 echo '<div style="clear: both;"></div>';
-                echo '<div class="term-description">' . wc_format_content( $term->description ) . '</div>'; // WPCS: XSS ok.
+                echo '<div class="term-description">' . wc_format_content($term->description) . '</div>'; // WPCS: XSS ok.
             }
         }
     }
 }
 
 
-
-
-if(!function_exists('bridge_qode_custom_breadcrumbs')) {
-    function bridge_qode_custom_breadcrumbs() {
+if (!function_exists('bridge_qode_custom_breadcrumbs')) {
+    function bridge_qode_custom_breadcrumbs()
+    {
 
         global $post;
         $homeLink = esc_url(home_url('/'));
@@ -208,19 +211,17 @@ if(!function_exists('bridge_qode_custom_breadcrumbs')) {
             echo '<div class="breadcrumbs"><div itemprop="breadcrumb" class="breadcrumbs_inner"><a' . $bread_style . ' href="' . $homeLink . '">' . $home . '</a>' . $delimiter;
 
 
-            if (is_category() ||  !bridge_qode_is_product_category()) {
+            if (is_category() || !bridge_qode_is_product_category()) {
                 $thisCat = get_category(get_query_var('cat'), false);
                 if (isset($thisCat->parent) && $thisCat->parent != 0) echo get_category_parents($thisCat->parent, TRUE, ' ' . $delimiter);
                 echo bridge_qode_get_module_part($before . single_cat_title('', false) . $after);
-            }
-            elseif (is_category() || bridge_qode_is_product_category()) {
-                $thisCat = get_category(get_queried_object(),false);
-                if (isset($thisCat->parent) && $thisCat->parent != 0) echo get_term_parents_list($thisCat->parent,'product_cat',array('separator' => ' '.$delimiter, 'link'=> true,'format'=> 'name'));
+            } elseif (is_category() || bridge_qode_is_product_category()) {
+                $thisCat = get_category(get_queried_object(), false);
+                if (isset($thisCat->parent) && $thisCat->parent != 0) echo get_term_parents_list($thisCat->parent, 'product_cat', array('separator' => ' ' . $delimiter, 'link' => true, 'format' => 'name'));
 
                 echo bridge_qode_get_module_part($before . single_cat_title('', false) . $after);
 
-            }
-            elseif (is_search()) {
+            } elseif (is_search()) {
                 echo bridge_qode_get_module_part($before . esc_html__('Search results for "', 'bridge') . get_search_query() . '"' . $after);
 
             } elseif (is_day()) {
@@ -315,3 +316,147 @@ if(!function_exists('bridge_qode_custom_breadcrumbs')) {
         }
     }
 }
+
+
+function bridge_core_carousel($atts, $content = null)
+{
+    $args = array(
+        "carousel"                => "",
+        "number_of_visible_items" => "",
+        "orderby"                 => "date",
+        "order"                   => "ASC",
+        "show_in_two_rows"        => ""
+    );
+    extract(shortcode_atts($args, $atts));
+
+    $html = "";
+    $carousel_holder_classes = "";
+    if ($carousel != "") {
+
+        if ($show_in_two_rows == 'yes') {
+            $carousel_holder_classes = ' two_rows';
+        }
+
+        $visible_items = "";
+        switch ($number_of_visible_items) {
+            case 'four_items':
+                $visible_items = 4;
+                break;
+            case 'five_items':
+                $visible_items = 5;
+                break;
+            default:
+                $visible_items = "";
+                break;
+        }
+
+        $html .= "<div class='qode_carousels_holder clearfix" . $carousel_holder_classes . "'><div class='qode_carousels' data-number-of-visible-items='" . $visible_items . "'><ul class='slides'>";
+
+        $q = array('post_type' => 'carousels', 'carousels_category' => $carousel, 'orderby' => $orderby, 'order' => $order, 'posts_per_page' => '-1');
+
+        $query = new WP_Query($q);
+
+        if ($query->have_posts()) : $postCount = 1;
+            while ($query->have_posts()) : $query->the_post();
+
+                if (get_post_meta(get_the_ID(), "qode_carousel-image", true) != "") {
+                    $image = get_post_meta(get_the_ID(), "qode_carousel-image", true);
+                } else {
+                    $image = "";
+                }
+
+                if (get_post_meta(get_the_ID(), "qode_carousel-hover-image", true) != "") {
+                    $hover_image = get_post_meta(get_the_ID(), "qode_carousel-hover-image", true);
+                    $has_hover_image = "has_hover_image";
+                } else {
+                    $hover_image = "";
+                    $has_hover_image = "";
+                }
+
+                if (get_post_meta(get_the_ID(), "qode_carousel-item-link", true) != "") {
+                    $link = get_post_meta(get_the_ID(), "qode_carousel-item-link", true);
+                } else {
+                    $link = "";
+                }
+
+                if (get_post_meta(get_the_ID(), "qode_carousel-item-target", true) != "") {
+                    $target = get_post_meta(get_the_ID(), "qode_carousel-item-target", true);
+                } else {
+                    $target = "_self";
+                }
+
+                $title = get_the_title();
+
+                //is current item not on even position in array and two rows option is chosen?
+                if ($postCount % 2 !== 0 && $show_in_two_rows == 'yes') {
+                    $html .= "<li class='item'>";
+                } elseif ($show_in_two_rows == '') {
+                    $html .= "<li class='item'>";
+                }
+                $html .= '<div class="carousel_item_holder">';
+//                if ($link != "") {
+                $html .= "<a itemprop='url' href='" . $image . "' target='" . $target . "'>";
+//                }
+
+                $first_image = bridge_qode_get_attachment_id_from_url($image);
+
+                if ($image != "") {
+                    $html .= "<span class='first_image_holder " . $has_hover_image . "'>";
+
+                    if (is_int($first_image)) {
+                        $html .= wp_get_attachment_image($first_image, 'full');
+                    } else {
+                        $html .= '<img itemprop="image" src="' . $image . '" alt="' . esc_html__('carousel image', 'bridge') . '" />';
+                    }
+
+
+                    $html .= "</span>";
+                }
+
+                $second_image = bridge_qode_get_attachment_id_from_url($hover_image);
+
+                if ($hover_image != "") {
+                    $html .= "<span class='second_image_holder " . $has_hover_image . "'>";
+
+                    if (is_int($second_image)) {
+                        $html .= wp_get_attachment_image($second_image, 'full');
+                    } else {
+                        $html .= '<img itemprop="image" src="' . $hover_image . '" alt="' . esc_html__('carousel image', 'bridge') . '" />';
+                    }
+
+
+                    $html .= "</span>";
+                }
+
+//                if ($link != "") {
+                $html .= "</a>";
+//                }
+
+                $html .= '</div>';
+
+                //is current item on even position in array and two rows option is chosen?
+                if ($postCount % 2 == 0 && $show_in_two_rows == 'yes') {
+                    $html .= "</li>";
+                } elseif ($show_in_two_rows == '') {
+                    $html .= "</li>";
+                }
+
+                $postCount++;
+
+            endwhile;
+
+        else:
+            $html .= esc_html__('Sorry, no posts matched your criteria.', 'bridge-core');
+        endif;
+
+        wp_reset_postdata();
+
+        $html .= "</ul>";
+        $html .= "</div></div>";
+
+    }
+
+    return $html;
+}
+
+add_shortcode('qode_carousel', 'bridge_core_carousel');
