@@ -9,4 +9,4 @@ $(document).ready(function ($) {
     $('.term-description').click(function () {
         $(this).addClass('term_visible');
     })
-})
+});

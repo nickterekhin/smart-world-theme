@@ -628,10 +628,109 @@
 
 .position_center.title .title_subtitle_holder {
     text-align: left !important;
+    padding-top: 0 !important;
 }
 
 @media only screen and (min-width: 991px) {
     .hide-on-desktop {
         display: none;
+    }
+}
+
+div.pp_pic_holder {
+    display: none !important;
+}
+
+body div.pp_overlay {
+    display: none !important;
+}
+
+/* recommend block */
+.recommend .vc_gitem_row .vc_gitem-col {
+    padding: 0;
+}
+
+.recommend .vc_custom_heading.vc_gitem-post-data-source-post_title h4 {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-top: 8px;
+}
+
+.recommend .vc_custom_heading.vc_gitem-post-data-source-post_excerpt {
+    display: none;
+}
+
+.recommend .vc_btn3-color-juicy-pink {
+    padding: 0;
+    background-color: transparent !important;
+    color: rgb(48, 48, 48) !important;
+    text-transform: uppercase;
+    font-weight: 600;
+    float: right;
+}
+
+.recommend .vc_btn3-color-juicy-pink:before {
+    content: "\f067";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    margin-right: 6px;
+}
+
+.recommend .vc_custom_1419240516480 {
+    background-color: transparent !important;
+}
+
+
+.recommend .vc_gitem-post-data {
+    margin-bottom: 8px;
+}
+
+.recommend .vc_grid-item-mini {
+    position: relative;
+}
+
+.recommend .vc_grid-btn-load_more .vc_btn3-style-flat {
+    padding: 11px 25px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 12px;
+    background-color: #7b09ad;
+    border: 2px solid #7b09ad;
+}
+
+
+.recommend .vc_grid-btn-load_more .vc_btn3-style-flat:hover {
+    background-color: #8730ad;
+    border-color: #de50ff;
+}
+
+@media only screen and (min-width: 991px) {
+    .recommend .vc_grid-item-mini:after {
+        content: '';
+
+        position: absolute;
+        top: -10px;
+        bottom: -10px;
+        right: -10px;
+        left: -10px;
+
+        width: calc(100% + 20px);
+        height: calc(100% + 20px);
+
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+        z-index: -2;
+        opacity: 0;
+
+        transition: 0.3s ease;
+    }
+
+    .recommend .vc_grid-item-mini:hover:after {
+        opacity: 1;
     }
 }
